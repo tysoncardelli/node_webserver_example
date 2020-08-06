@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 var hbs = require('hbs');
 require('./hbs/helpers')
- 
+const port = process.env.PORT || 3000;
 
 
 // respond with "hello world" when a GET request is made to the homepage
@@ -29,6 +29,6 @@ app.get('/about', function(req, res) {
         ano: new Date().getFullYear()
     });
 });
-app.listen(3000, ()=>{~
-    console.log("Escuchando peticiiones en el puerto 3000")
+app.listen(port, ()=>{~
+    console.log(`Escuchando peticiiones en el puerto ${ port }`)
 })
